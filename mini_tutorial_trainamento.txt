@@ -1,0 +1,29 @@
+# gerar o arquivo de treinamento 
+opencv_createsamples -info cars.info -num 100 -w 48 -h 24 -vec cars.vec
+
+# visualizar imagens 
+opencv_createsamples -vec cars.vec -w 48 -h 24
+
+# gerar os arquivos xml 
+opencv_traincascade -data data/ -vec cars.vec -bg bg.txt -numPos 90 -numNeg 90 -numStages 2 -w 48 -h 24
+
+------------------------------- TAGS---------------------------------------
+opencv_createsamples -info positive_objects.info -num 95 -w 24 -h 24 -vec tags.vec
+
+opencv_createsamples -vec tags.vec -w 24 -h 24
+
+------------------------------- TAGS Teste Celular ---------------------------------------
+
+opencv_createsamples -info positive_ieee_open_v1.info -num 90 -w 50 -h 50 -vec tags_cel.vec
+
+opencv_createsamples -vec tags_cel.vec -w 48 -h 48
+
+
+
+Referências: 
+
+https://www.youtube.com/watch?v=WEzm7L5zoZE&noredirect=1
+
+
+
+
